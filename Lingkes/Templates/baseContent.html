@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 {% load static tailwind_tags %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Under Development</title>
-    <link rel="stylesheet" href="{% static 'css/style.css'%}">
-    {% tailwind_css %}
-</head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+          {% block title %}
+            Project Under Development
+          {% endblock %}
+        </title>
+        {% tailwind_css %}
+  </head>
 
-    <div class="text-center">
-      <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded-lg shadow-md">
-        <h1 class="text-4xl font-bold">🚧 Project Under Development 🚧</h1>
-        <p class="text-lg mt-4">We’re working hard to bring you something amazing. Stay tuned for updates!</p>
-      </div>
-    </div>
-  
+  <body>
+
+      <!-- Include Header -->
+      {% include 'Includes/headerSection.html' %}
+      
+      {% block content %}
+                  <!-- Content will be dynamically inserted here -->
+      {% endblock %}
+
+
+      <!-- Include Footer -->
+      {% include 'Includes/footerSection.html' %}
+
   </body>
 </html>
